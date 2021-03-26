@@ -22,15 +22,15 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": [
-        ".src/*"
+        "./src/*"
       ],
       "@test/*": [
-        ".test/*"
+        "./test/*"
       ]
     },
     "rootDirs": [
       "./src",
-      ".test"
+      "./test"
     ],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
