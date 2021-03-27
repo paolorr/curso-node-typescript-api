@@ -38,7 +38,11 @@ export default class StormGlass {
   constructor(private readonly request: AxiosStatic) { }
 
   public async fetchPoints(lat: number, lng: number): Promise<ForecastPoint[]> {
-    const response = await this.request.get<StormGlassForecastResponse>(`https://api.stormglass.io/v2/weather/point?params=${this.stormGlassAPIParams}&source=${this.stormGlassAPISource}&end=1592113802lat=${lat}&lng=${lng}`);
+    const response = await this.request.get<StormGlassForecastResponse>(`https://api.stormglass.io/v2/weather/point?params=${this.stormGlassAPIParams}&source=${this.stormGlassAPISource}&end=1592113802lat=${lat}&lng=${lng}`, {
+      headers: {
+        Authorization: 'fake-token',
+      },
+    });
     return this.normalizeResponse(response.data);
   }
 
